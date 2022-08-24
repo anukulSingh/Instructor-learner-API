@@ -75,14 +75,4 @@ app.use('/api/v1/reviews', reviews)
 
 app.use(errorHandler);
 
-const PORT = process.env.PORT;
-
-const server = app.listen(
-     PORT,
-     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
-);
-
-process.on('unhandledRejection', (err) => {
-    console.error(`Error: ${err.message}`);
-    server.close(() => process.exit(1));
-})
+module.exports = app;
