@@ -1,6 +1,3 @@
-const dotenv = require("dotenv");
-dotenv.config({ path: "config.env" });
-
 const s3 = require("./s3");
 
 exports.uploadFileToS3 = async (params) => {

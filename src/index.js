@@ -1,6 +1,6 @@
 const path = require('path')
 const express = require('express');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser')
 const mongoSanitize = require('express-mongo-sanitize')
 const helmet = require('helmet');
@@ -13,7 +13,7 @@ const errorHandler = require('../src/middleware/error');
 
 // Load env variables
 // can also do it with env-cmd package in package.json file
-dotenv.config({ path: './config/config.env'})
+// dotenv.config({ path: './config/config.env'})
 require('../config/db');
 
 //connect to database
@@ -79,10 +79,10 @@ const PORT = process.env.PORT;
 
 const server = app.listen(
      PORT,
-     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold)
+     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 );
 
 process.on('unhandledRejection', (err) => {
-    console.error(`Error: ${err.message}`.red);
+    console.error(`Error: ${err.message}`);
     server.close(() => process.exit(1));
 })

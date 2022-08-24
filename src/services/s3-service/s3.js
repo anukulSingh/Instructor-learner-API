@@ -1,8 +1,5 @@
 const AWS = require("aws-sdk");
 
-const dotenv = require("dotenv");
-dotenv.config({ path: "config.env" });
-
 const AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
 const AWS_SECRET = process.env.AWS_SECRET;
 const AWS_REGION = process.env.AWS_REGION;

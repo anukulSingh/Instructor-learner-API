@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-require('dotenv').config({ path: './config.env'})
 
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
@@ -11,6 +10,6 @@ mongoose.connect(process.env.MONGODB_URI, {
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log(`MongoDB connected: ${db.host}`.cyan.underline.bold);
+  console.log(`MongoDB connected: ${db.host}`);
 });
 
